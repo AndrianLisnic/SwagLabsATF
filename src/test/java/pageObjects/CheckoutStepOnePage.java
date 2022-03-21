@@ -20,7 +20,7 @@ public class CheckoutStepOnePage {
     }
 
     public void completeCheckoutInformation(){
-        List<List<String>> csvCheckoutDetails = GenericUtils.csvToListOfStringsConverter();
+        List<List<String>> csvCheckoutDetails = GenericUtils.csvToListOfStringsConverter("src/test/resources/checkoutDetails.csv");
         int numberOfRecordsInCsv = csvCheckoutDetails.size();
         int usedRecordNumber = ThreadLocalRandom.current().nextInt(0, numberOfRecordsInCsv);
 
