@@ -24,9 +24,9 @@ public class GenericUtils {
         driver.switchTo().window(childWindow);
     }
 
-    public static List<List<String>> csvToListOfStringsConverter(){
+    public static List<List<String>> csvToListOfStringsConverter(String filePath){
         List<List<String>> records = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("src/test/resources/checkoutDetails.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
